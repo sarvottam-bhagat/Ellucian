@@ -33,6 +33,8 @@ jobs:
     - name: Build and push Docker image
       uses: docker/build-push-action@v2
       with:
+        context: .
+        file: ./DockerFile
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/streamlit-app:latest
     
